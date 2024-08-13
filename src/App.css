@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
 .App {
   text-align: center;
 }
@@ -9,12 +11,14 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: cradle infinite 2s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url('../public/background-image.png');
+  background-size: cover;
+  background-position: center; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +32,107 @@
   color: #61dafb;
 }
 
+.logo-title {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Dancing Script', cursive;
+  top: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 20px #E90064, 0 0 20px #E90064, 0 0 20px #E90064, 0 0 20px #E90064;
+  animation: SHARPEN 1.5s infinite alternate;
+  letter-spacing: 0.2rem;
+}
+/* 3 */
+.btn-3 {
+  background: #B3005E;
+  box-shadow:  0 0 5px #B3005E,  0 0 8px #B3005E;
+  line-height: 42px;
+  padding: 0px 20px;
+  border: none;
+  z-index: 2;
+  -webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: medium;
+  color: #ffffff;
+}
+.btn-3:hover{
+  background-color: transparent;
+  color: #060047;
+  box-shadow: 0 5px 3px -3px #060047, 0 -5px 3px -3px #060047,
+    0 5px 3px -3px #060047, 0 -5px 3px -3px #060047;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 50%;
+  right: 0;
+  z-index: -1;
+  background: #FF5F9E;
+  box-shadow: 0 0 5px #FF5F9E;
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  top: 0;
+}
+.btn-3:after {
+  bottom: 0;
+}
+.btn-3:hover:before,
+.btn-3:hover:after {
+  height: 0;
+  background-color: #060047;
+}
+
+.affirmation {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 0 0 20px #060047, 0 0 20px #060047, 0 0 20px #060047, 0 0 20px #060047;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes cradle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes SHARPEN {
+  0% {
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(0);
   }
 }
